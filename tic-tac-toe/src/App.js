@@ -1,6 +1,6 @@
 import './App.css';
 import { recipes } from './data.js';
-import { useState } from 'react';
+import Recipe from './Recipe';
 
 function App() {
 
@@ -8,6 +8,14 @@ function App() {
     return (
       <div>
       <h1>Recipes</h1>
+      {recipes.map(recipe => (
+        <Recipe
+        key={recipe.id}
+        id={recipe.id}
+        name={recipe.name}
+        ingredients={recipe.ingredients}
+        />
+            ))}
     </div>
     );
   }
